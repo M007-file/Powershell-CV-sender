@@ -1,26 +1,26 @@
 ############################################################################
-$mailovka = "michal@kopl.pro"; #must be configured in Your Outlook
+$mailovka = "sender.email.address@domain.com"; #must be configured in Your Outlook
 $LogFile = "C:\_DEV\cv-sender\log.txt"
 $output_path_tmp = "C:\_DEV\cv-sender\tmp\adresy.txt"
 $output_path = "C:\_DEV\cv-sender\adresy.txt"
-$SenderName = "Michal Kopl"
-$SenderMail = "michal@kopl.pro"
-$SenderMobile = "+420 777 062 425"
+$SenderName = "John Doe"
+$SenderMail = "sender.email.address@domain.com"
+$SenderMobile = "+429 1374 12 94"
 $Subjects = @("IT Systems Administrator", "IT Security Analyst", "MS Windows Cloud Engineer", "Office 365 Administrator", "Microsoft 365 Architect", "MS Cloud Architect", "Automation Engineer", "PHP Coder", "Database Administrator", "IT Project Manager", "IT Security Consultant", "Webdesigner with SEO", "Linux Administrator", "Team Lead of IT Operations", "IT Manager with broad skillset", "IT Security Awareness Trainer", "Graphic Designer for Digital Marketing", "Copywriter", "Bash coder")
 $SenderMobileLink = $SenderMobile.Trim(" ")
-$CVLink = "https://www.kopl.pro/images/Michal-Kopl_CV.pdf"
-$CertificationsLink = "https://kopl.pro/images/Michal-Kopl-certifikace.rar"
-$WebLink = "https://www.kopl.pro"
-$LinkedInLink = "https://www.linkedin.com/in/michalkopl"
-$FacebookLink = "https://www.facebook.com/michal.kopl.7"
-$GitHubLink = "https://github.com/michal-kopl"
-$YoutubeLink = "https://www.youtube.com/channel/UC0sr3SeVc6QyD8kuWmxobFg"
-$RecommendationLetterLink = "https://www.kopl.pro/images/Michal-Kopl-Recommendation-letter-CNB.pdf"
-$CalendlyLink = "https://calendly.com/michal-kopl"
+$CVLink = "https://yourdomain.com/images/john-doe_CV.pdf"
+$CertificationsLink = "https://yourdomain.com/images/Michal-Kopl-certifikace.rar"
+$WebLink = "https://yourdomain.com"
+$LinkedInLink = "https://www.linkedin.com/in/johndoe"
+$FacebookLink = "https://www.facebook.com/john.doe.27"
+$GitHubLink = "https://github.com/john-doe"
+$YoutubeLink = "https://www.youtube.com/channel/U23sadsr3SeVc6QyD8kuWmxobFg"
+$RecommendationLetterLink = "https://yourdomain.com/images/Michal-Kopl-Recommendation-letter-CNB.pdf"
+$CalendlyLink = "https://calendly.com/john-doe"
 $GoogleMapsLink = "https://goo.gl/maps/uopF5xQv7SBvSxAH7"
-$CVFile = "C:\_DEV\cv-sender\Michal-Kopl_CV.pdf"
-$DigitalReportFile = "C:\_DEV\cv-sender\Michal-Kopl_Digital-Skills-Report.pdf"
-$RecommendationLetter = "C:\_DEV\cv-sender\Michal-Kopl_Recommendation-letter-CNB.pdf"
+$CVFile = "C:\_DEV\cv-sender\john-doe_CV.pdf"
+$DigitalReportFile = "C:\_DEV\cv-sender\john-doe_Digital-Skills-Report.pdf"
+$RecommendationLetter = "C:\_DEV\cv-sender\john-doe_Recommendation-letter-employer-name.pdf"
 $mysql_server = "localhost"
 $mysql_user = "root"
 $mysql_password = ""
@@ -43,8 +43,7 @@ $Connection.ConnectionString = "SERVER=$mysql_server;DATABASE=$dbName;UID=$mysql
 $Connection.Open()
 $sql = New-Object MySql.Data.MySqlClient.MySqlCommand
 $sql.Connection = $Connection
-#$sql.CommandText = "SELECT ``email``, ``last_message``, ``use`` FROM ``emaily_personalky`` WHERE (``use``=1 AND ((``last_message``<ADDDATE(``last_message``,INTERVAL $frequency $unit) AND TIMESTAMP(NOW())>ADDDATE(``last_message``,INTERVAL $frequency $unit)) OR (``last_message`` IS NULL)));" 
-$sql.CommandText = "SELECT 'michal.kopl@gmail.com', 'email', 1 FROM ``emaily_personalky`` LIMIT 1;" 
+$sql.CommandText = "SELECT ``email``, ``last_message``, ``use`` FROM ``emaily_personalky`` WHERE (``use``=1 AND ((``last_message``<ADDDATE(``last_message``,INTERVAL $frequency $unit) AND TIMESTAMP(NOW())>ADDDATE(``last_message``,INTERVAL $frequency $unit)) OR (``last_message`` IS NULL)));" 
 $Year = Get-Date -f yyyy
 Write-Host $sql.CommandText
 $dataAdapter = New-Object MySql.Data.MySqlClient.MySqlDataAdapter($sql)
